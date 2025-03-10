@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    lt.tumenas.allowunsignedextensions.plist
+    Author: Apuokėnas
+    Version: 1.0.0
+    Last Updated: 2025-03-10
+    This plist file configures a launch daemon to enable Safari's Developer Settings and allow unsigned extensions.
+    NOTE: Update the 'your-username' placeholder in the ProgramArguments path with your actual username.
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Author</key>
+    <string>Apuokėnas</string>
+    <key>Label</key>
+    <string>lt.tumenas.allowunsignedextensions</string>
+    <!-- 
+         The username is hardcoded in the path below because launchd does not support 
+         environment variable expansion. Replace 'your-username' with the actual username 
+         on the system where this daemon is installed.
+    -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/your-username/Applications/AllowUnsignedExtensions.app/Contents/MacOS/applet</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <!-- Adding KeepAlive ensures that if the daemon fails, launchd attempts to restart it -->
+    <key>KeepAlive</key>
+    <true/>
+    <key>LaunchEvents</key>
+    <dict>
+        <key>com.apple.application.safari</key>
+        <dict>
+            <key>EventType</key>
+            <string>Launch</string>
+        </dict>
+    </dict>
+    <key>StandardErrorPath</key>
+    <string>/tmp/AllowUnsignedExtensions.error.log</string>
+    <key>StandardOutPath</key>
+    <string>/tmp/AllowUnsignedExtensions.output.log</string>
+</dict>
+</plist>
