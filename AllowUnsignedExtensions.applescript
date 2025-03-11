@@ -1,20 +1,19 @@
 -- AllowUnsignedExtensions.applescript
 --
--- Author: Apuok?nas
--- Version: 1.0.0
--- Last Updated: 2025-03-10
+-- Author: Apuokenas
+-- Version: 1.0.1
+-- Last Updated: 2025-03-11
 --
 -- This AppleScript enables Safari's Developer Settings by ensuring the 
 -- "Show features for web developers" checkbox is checked on the Advanced tab,
 -- and then it enables the "Allow unsigned extensions" checkbox on the Developer tab.
 --
 -- Usage:
--- Usage:
 -- - In Script Editor, export the AppleScript as an application (AllowUnsignedExtensions.app).
 -- - Save the script application in the /Applications location.
 -- - Ensure Safari and AllowUnsignedExtensions.app has accessibility permissions (System Settings > Privacy & Security > Accessibility).
--- - Save the accompanying lt.tumenas.enableunsignedextensions.plist file in the ~/Library/LaunchAgents/ directory.
--- - Register the agent permanently to auto-load it on each Safari launch: `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/lt.tumenas.allowunsignedextensions.plist`
+-- - Save the accompanying lt.tumenas.enableunsignedextensions.plist file in ~/Library/LaunchAgents/.
+-- - Register the launch agent permanently to auto-load it on each Safari launch: `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/lt.tumenas.allowunsignedextensions.plist`
 
 --------------------------------------------------------------------------------
 -- Configurable Variables
