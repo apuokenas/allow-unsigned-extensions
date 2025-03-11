@@ -10,10 +10,12 @@
 --
 -- Usage:
 -- - In Script Editor, export the AppleScript as an application (AllowUnsignedExtensions.app).
--- - Save the script application in the /Applications location.
--- - Ensure Safari and AllowUnsignedExtensions.app has accessibility permissions (System Settings > Privacy & Security > Accessibility).
+-- - Save the script application in the ~/Applications/ location.
+-- - Ensure the Safari and AllowUnsignedExtensions apps have accessibility permissions
+--   (System Settings > Privacy & Security > Accessibility).
 -- - Save the accompanying lt.tumenas.enableunsignedextensions.plist file in ~/Library/LaunchAgents/.
--- - Register the launch agent permanently to auto-load it on each Safari launch: `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/lt.tumenas.allowunsignedextensions.plist`
+-- - Register the launch agent permanently to auto-load it on each Safari launch:
+--   `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/lt.tumenas.allowunsignedextensions.plist`.
 
 --------------------------------------------------------------------------------
 -- Configurable Variables
